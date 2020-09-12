@@ -1,0 +1,8 @@
+{
+  "src/**/*.+(js|jsx|css|less|scss|ts|tsx|md)": [
+    "prettier --write",
+    "tsc --noEmit",
+    "eslint --fix \"src/**\"",
+    "git add"
+  ]
+}

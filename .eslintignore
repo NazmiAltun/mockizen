@@ -1,0 +1,10 @@
+node_modules
+coverage
+yarn.lock
+*.json
+*.config.js
+*.md
+*.log
+*.sh
+.eslintrc.js
+dist
