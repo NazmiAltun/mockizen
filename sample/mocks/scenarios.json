@@ -10,6 +10,12 @@
       "delete": 202,
       "get": 200,
       "post": 200
+    },
+    "/sucess.html": {
+      "get": "200.html"
+    },
+    "/200.htm": {
+      "get": "200.htm"
     }
   }
 }

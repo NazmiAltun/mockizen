@@ -9,8 +9,13 @@ export function mapStaticFileRoute(
 ): express.Express {
   const handler = (_: any, res: any): void => {
     const filePath = path.join(__dirname, scenariosPath, route);
+    if (!process.env.LOGGING_DISABLED) {
+      console.log(`Requesting static file. Method: ${method} route : ${route} path: ${filePath}`);
+    }
     res.sendFile(filePath);
   };
-
+  if (!process.env.LOGGING_DISABLED) {
+    console.log(`Mapping static file. Method: ${method} route : ${route} path: ${path.join(__dirname, scenariosPath, route)}`);
+  }
   return app[method](route, handler);
 }
