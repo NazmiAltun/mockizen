@@ -8,3 +8,4 @@ yarn.lock
 *.sh
 .eslintrc.js
 dist
+**/scenarios

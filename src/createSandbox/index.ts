@@ -33,9 +33,9 @@ whiteList.add('setImmediate');
 whiteList.add('setInterval');
 whiteList.add('setTimeout');
 
-export function createSandbox(filePath: string, basePath: string) {
+export function createSandbox(filePath: string, basePath: string): Record<string, unknown> {
   const fileDirname = path.parse(filePath).dir;
-  const newRequire = function require(modPath: string, basePath: string, fileDirname: string) {
+  const newRequire = function require(modPath: string, basePath: string, fileDirname: string): any {
     let resolved = modPath;
     if (path.parse(modPath).dir !== '') {
       resolved = path.resolve(basePath, modPath);
@@ -50,8 +50,8 @@ export function createSandbox(filePath: string, basePath: string) {
   const base = Object
     .getOwnPropertyNames(global)
     .filter(name => whiteList.has(name))
-    .reduce((sbx, _) => {
-      //  sbx[name] = global[name];
+    .reduce((sbx) => {
+      sbx[name] = global[name];
       return sbx;
     }, {});
 
@@ -63,7 +63,7 @@ export function createSandbox(filePath: string, basePath: string) {
       require: newRequire,
     },
     console: {
-      log: (line: string) => {
+      log: (line: string): void => {
         console.log.apply(console, [
           `(log: ${path.relative(basePath, filePath)}) ${line}`
         ])
