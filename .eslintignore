@@ -9,3 +9,5 @@ yarn.lock
 .eslintrc.js
 dist
 **/scenarios
+Dockerfile
+*.yml

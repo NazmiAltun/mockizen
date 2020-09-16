@@ -7,9 +7,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
     "test": "mocha -r ts-node/register src/**/*.spec.ts --exit",
     "lint": "tsc --noEmit && eslint --fix \"**\"",
+    "build": "tsc",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {

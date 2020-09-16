@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  mockserver:
+    build:
+      context: ..
+    volumes:
+      - ./mocks:/opt/app/mocks
+    environment:
+      - PORT=8080
+    ports:
+      - "7015:8080"
