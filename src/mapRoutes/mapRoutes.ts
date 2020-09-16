@@ -26,9 +26,9 @@ function map(server: express.Express, routes: Record<string, unknown>, currentPa
   }
 }
 
-export default async function mapRoutes(server: express.Express): Promise<void> {
-  const scenariosPath = path.resolve(process.cwd(), 'scenarios.json');
-  const scenarios = await import(scenariosPath);
+export default async function mapRoutes(server: express.Express, scenariosPath: string): Promise<void> {
+  const scenariosFullPath = path.resolve(process.cwd(), scenariosPath);
+  const scenarios = await import(scenariosFullPath);
   map(server, scenarios.routes, '');
 }
 

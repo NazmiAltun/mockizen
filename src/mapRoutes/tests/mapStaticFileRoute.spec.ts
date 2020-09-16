@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 chai.should();
 
 ['/wtf.jpg', '/200.htm', '/200.html'].forEach((route) => {
-  mapStaticFileRoute(app, 'get', 'tests/scenarios', route);
+  mapStaticFileRoute(app, 'get', 'tests/mocks', route);
   describe('Map Status Code Only Route', () => {
     it('Maps correctly', done => {
       chai
