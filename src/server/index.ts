@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import configureLogging from './configureLogging';
 import mapRoutes from '../mapRoutes';
 
-const ScenariosPath = "scenarios.json";
+const ScenariosPath = 'mocks/scenarios.json';
 
 const server = express();
 server.use(bodyParser.json());
