@@ -1,10 +1,15 @@
 import { expect } from 'chai';
-import isJsFile from '../isJsFile';
+import validateExtension from '../validateExtension';
 
 describe('Check if Js File', () => {
-  ['/test.js', '/file.js?cache=true'].forEach(route => {
+  [
+    { file: '/test.js', expectedExtension: '.js' },
+    { file: '/file.js?cache=true', expectedExtension: '.js' },
+    { file: '/test.json', expectedExtension: '.json' },
+    { file: '/file.json?cache=true', expectedExtension: '.json' },
+  ].forEach(fileExtensionPair => {
     it('should return true if path is js file', () => {
-      expect(isJsFile(route)).to.be.true;
+      expect(validateExtension(fileExtensionPair.file, fileExtensionPair.expectedExtension)).to.be.true;
     });
   });
 });
