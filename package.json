@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "nyc mocha -r ts-node/register src/**/*.spec.ts --exit && nyc report --reporter=text-lcov > coverage.lcov",
+    "test": "nyc mocha -r ts-node/register src/**/*.spec.ts --exit && nyc report --reporter lcovonly",
     "lint": "tsc --noEmit && eslint --fix \"**\"",
     "build": "tsc"
   },
