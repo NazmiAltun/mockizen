@@ -8,7 +8,7 @@
   "private": false,
   "scripts": {
     "test": "nyc mocha -r ts-node/register src/**/*.spec.ts --exit",
-    "coverage": "nyc npm run test",
+    "coverage": "nyc yarn run test",
     "lint": "tsc --noEmit && eslint --fix \"**\"",
     "build": "tsc"
   },
