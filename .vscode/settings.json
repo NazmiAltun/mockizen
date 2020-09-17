@@ -1,14 +1,10 @@
 {
   "files.exclude": {
     "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
     "**/CVS": true,
-    "**/.DS_Store": true,
     "**/node_modules": true,
     "dist": true,
-    ".rts2_cache_*": true,
-    "storybook-static": true
+    ".nyc_output": true,
   },
   "editor.formatOnSave": true,
   "typescript.preferences.importModuleSpecifier": "relative",
