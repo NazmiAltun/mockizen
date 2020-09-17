@@ -2,7 +2,10 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
@@ -22,6 +25,11 @@
     "removeComments": true,
     "outDir": "dist"
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "src/test"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

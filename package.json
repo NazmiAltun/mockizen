@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "nyc mocha -r ts-node/register src/**/*.spec.ts --exit",
+    "test": "nyc mocha -r ts-node/register src/**/*.spec.ts --file ./src/test/teardown.ts",
     "coverage": "nyc yarn run test",
     "lint": "tsc --noEmit && eslint --fix \"**\"",
     "build": "tsc"
@@ -17,6 +17,7 @@
     "@types/chai": "^4.2.12",
     "@types/chai-http": "^4.2.0",
     "@types/express": "^4.17.8",
+    "@types/http-terminator": "^2.0.1",
     "@types/mocha": "^8.0.3",
     "@types/morgan": "^1.9.1",
     "@types/node": "^14.10.1",
@@ -28,6 +29,7 @@
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "http-terminator": "^2.0.3",
     "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
     "mocha": "^8.1.3",

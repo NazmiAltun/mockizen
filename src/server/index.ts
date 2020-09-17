@@ -5,10 +5,10 @@ import mapRoutes from '../mapRoutes';
 
 const ScenariosPath = 'mocks/scenarios.json';
 
-const server = express();
-server.use(bodyParser.json());
-configureLogging(server);
-mapRoutes(server, ScenariosPath);
-server.listen(process.env.PORT || 8080);
+const app = express();
+app.use(bodyParser.json());
+configureLogging(app);
+mapRoutes(app, ScenariosPath);
+const server = app.listen(process.env.PORT || 8080);
 
-export default server;
+export { app, server };
