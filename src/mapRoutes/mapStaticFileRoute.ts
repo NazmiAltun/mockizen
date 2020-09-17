@@ -15,6 +15,7 @@ export default function (
     }
     res.sendFile(fullFilePath);
   };
+
   console.log(
     `Mapping static file. Method: ${method} route : ${route} filePath:${filePath}` +
       ` scenariosPath:${scenariosPath} fullFilePath: ${path.join(scenariosPath, filePath)}`

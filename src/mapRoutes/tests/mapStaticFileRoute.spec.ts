@@ -7,12 +7,11 @@ import { app } from '../../server';
 chai.use(chaiHttp);
 chai.should();
 
-['/wtf.jpg', '/200.htm', '/200.html'].forEach(route => {
-  describe('Map Status Code Only Route', () => {
-    beforeEach(() => {
-      const dir = path.resolve(process.cwd(), './src/mapRoutes/tests/mocks/');
-      mapStaticFileRoute(app, 'get', dir, route, route);
-    });
+describe('Map Status Code Only Route', () => {
+  const dir = path.resolve(process.cwd(), './src/mapRoutes/tests/mocks/');
+
+  ['/wtf.jpg', '/200.htm', '/200.html', '/sample.json'].forEach(route => {
+    mapStaticFileRoute(app, 'get', dir, route, route);
     it('Maps correctly', done => {
       chai
         .request(app)
@@ -22,6 +21,12 @@ chai.should();
             done(err);
           }
           res.should.have.status(200);
+          if (route.endsWith('.html') || route.endsWith('.htm')) {
+            res.should.be.html;
+          }
+          if (route.endsWith('.json')) {
+            res.should.be.json;
+          }
           done();
         });
     });

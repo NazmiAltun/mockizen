@@ -16,6 +16,9 @@
     },
     "/200.htm": {
       "get": "200.htm"
+    },
+    "/sample": {
+      "get": "sample.json"
     }
   }
 }
