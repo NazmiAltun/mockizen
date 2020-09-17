@@ -16,6 +16,12 @@
     },
     "/200.htm": {
       "get": "200.htm"
+    },
+    "/users": {
+      "get": "users.json"
+    },
+    "/random": {
+      "get": "random-gen.js"
     }
   }
 }
