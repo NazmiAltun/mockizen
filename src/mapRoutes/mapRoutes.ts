@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import { mapStatusCodeOnlyRoute } from './mapStatusCodeOnlyRoute';
@@ -27,7 +28,15 @@ function map(server: express.Express, routes: Record<string, unknown>, currentRo
 }
 
 export default async function mapRoutes(server: express.Express, scenariosPath: string): Promise<void> {
-  const scenariosFullPath = path.resolve(process.cwd(), scenariosPath);
-  const scenarios = await import(scenariosFullPath);
-  map(server, scenarios.routes, '', path.dirname(scenariosFullPath));
+  try {
+    const scenariosFullPath = path.resolve(process.cwd(), scenariosPath);
+    if (fs.existsSync(scenariosFullPath)) {
+      console.log(`Reading scenarios from file : ${scenariosFullPath}`);
+    }
+    const scenarios = await import(scenariosFullPath);
+    map(server, scenarios.routes, '', path.dirname(scenariosFullPath));
+  } catch (err) {
+    console.error('Failed mapping routes');
+    console.error(err);
+  }
 }
