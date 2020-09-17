@@ -1,16 +1,14 @@
-import fs from 'fs';
-import path from 'path';
 import express from 'express';
 import { mapStatusCodeOnlyRoute } from './mapStatusCodeOnlyRoute';
 import { mapStaticFileRoute } from './mapStaticFileRoute';
 
-function map(app: express.Express, routes: Record<string, unknown>, currentRoute: string, dir: string): void {
+export default function mapRoutes(app: express.Express, routes: Record<string, unknown>, currentRoute: string, dir: string): void {
   currentRoute = currentRoute || '';
 
   for (const key in routes) {
     switch (typeof routes[key]) {
       case 'object':
-        map(app, routes[key] as Record<string, unknown>, currentRoute + key, dir);
+        mapRoutes(app, routes[key] as Record<string, unknown>, currentRoute + key, dir);
         break;
       case 'number':
         let verb = key as 'all' | 'get' | 'post' | 'put' | 'delete' | 'patch' | 'options' | 'head';
@@ -24,19 +22,5 @@ function map(app: express.Express, routes: Record<string, unknown>, currentRoute
       default:
         throw new Error(`Unknown value type ${typeof routes[key]}`);
     }
-  }
-}
-
-export default async function mapRoutes(app: express.Express, scenariosPath: string): Promise<void> {
-  try {
-    const scenariosFullPath = path.resolve(process.cwd(), scenariosPath);
-    if (fs.existsSync(scenariosFullPath)) {
-      console.log(`Reading scenarios from file : ${scenariosFullPath}`);
-    }
-    const scenarios = await import(scenariosFullPath);
-    map(app, scenarios.routes, '', path.dirname(scenariosFullPath));
-  } catch (err) {
-    console.error('Failed mapping routes');
-    console.error(err);
   }
 }

@@ -2,7 +2,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import { before } from 'mocha';
 import { app } from '../../server';
-import mapRoutes from '../mapRoutes';
+import mapRoutes from '../parseAndmapRoutes';
 
 chai.use(chaiHttp);
 chai.should();
@@ -12,7 +12,7 @@ describe('Map Routes', () => {
     await mapRoutes(app, './src/mapRoutes/tests/mocks/scenarios.json');
   });
   ['/all', '/200.htm', '/sucess.html'].forEach(route => {
-    it('should map get routes from scenarios.json file', (done) => {
+    it('should map get routes from scenarios.json file', done => {
       chai
         .request(app)
         .get(route)
@@ -24,7 +24,7 @@ describe('Map Routes', () => {
           done();
         });
     });
-    it('should map delete route', (done) => {
+    it('should map delete route', done => {
       chai
         .request(app)
         .delete('/all')
