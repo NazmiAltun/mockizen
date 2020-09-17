@@ -35,22 +35,21 @@ whiteList.add('setTimeout');
 
 export function createSandbox(filePath: string, basePath: string): Record<string, unknown> {
   const fileDirname = path.parse(filePath).dir;
-  const newRequire = function require(modPath: string, basePath: string, fileDirname: string): any {
+  const newRequire = function require(modPath: string, basePathNew: string, fileDirnameNew: string): any {
     let resolved = modPath;
     if (path.parse(modPath).dir !== '') {
-      resolved = path.resolve(basePath, modPath);
+      resolved = path.resolve(basePathNew, modPath);
     }
     try {
       return module.require(resolved);
     } catch (e) {
-      resolved = path.resolve(fileDirname, modPath);
+      resolved = path.resolve(fileDirnameNew, modPath);
       return module.require(resolved);
     }
   };
-  const base = Object
-    .getOwnPropertyNames(global)
+  const base = Object.getOwnPropertyNames(global)
     .filter(name => whiteList.has(name))
-    .reduce((sbx) => {
+    .reduce(sbx => {
       sbx[name] = global[name];
       return sbx;
     }, {});
@@ -64,11 +63,9 @@ export function createSandbox(filePath: string, basePath: string): Record<string
     },
     console: {
       log: (line: string): void => {
-        console.log.apply(console, [
-          `(log: ${path.relative(basePath, filePath)}) ${line}`
-        ])
-      }
-    }
+        console.log.apply(console, [`(log: ${path.relative(basePath, filePath)}) ${line}`]);
+      },
+    },
   });
   return sandbox;
 }
