@@ -1,7 +1,7 @@
 import chai from 'chai';
 import path from 'path';
 import chaiHttp from 'chai-http';
-import { mapStaticFileRoute } from '../mapStaticFileRoute';
+import mapStaticFileRoute from '../mapStaticFileRoute';
 import { app } from '../../server';
 
 chai.use(chaiHttp);

@@ -1,6 +1,6 @@
 import express from 'express';
-import { mapStatusCodeOnlyRoute } from './mapStatusCodeOnlyRoute';
-import { mapStaticFileRoute } from './mapStaticFileRoute';
+import mapStatusCodeOnlyRoute from './mapStatusCodeOnlyRoute';
+import mapStaticFileRoute from './mapStaticFileRoute';
 
 export default function mapRoutes(app: express.Express, routes: Record<string, unknown>, currentRoute: string, dir: string): void {
   currentRoute = currentRoute || '';

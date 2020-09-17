@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 
-export function mapStaticFileRoute(
+export default function (
   app: express.Express,
   method: 'all' | 'get' | 'post' | 'put' | 'delete' | 'patch' | 'options' | 'head',
   scenariosPath: string,

@@ -1,6 +1,6 @@
 import express from 'express';
 
-export function mapStatusCodeOnlyRoute(
+export default function (
   app: express.Express,
   method: 'all' | 'get' | 'post' | 'put' | 'delete' | 'patch' | 'options' | 'head',
   route: string,

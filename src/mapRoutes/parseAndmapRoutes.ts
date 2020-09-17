@@ -3,7 +3,7 @@ import path from 'path';
 import express from 'express';
 import mapRoutes from './mapRoutes';
 
-export default async function parseAndmapRoutes(app: express.Express, scenariosPath: string): Promise<void> {
+export default async function (app: express.Express, scenariosPath: string): Promise<void> {
   try {
     const scenariosFullPath = path.resolve(process.cwd(), scenariosPath);
     if (fs.existsSync(scenariosFullPath)) {

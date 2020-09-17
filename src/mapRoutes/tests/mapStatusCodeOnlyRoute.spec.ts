@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
-import { mapStatusCodeOnlyRoute } from '../mapStatusCodeOnlyRoute';
+import mapStatusCodeOnlyRoute from '../mapStatusCodeOnlyRoute';
 import { app } from '../../server';
 
 chai.use(chaiHttp);
