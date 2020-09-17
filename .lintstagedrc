@@ -1,7 +1,7 @@
 {
   "src/**/*.+(ts|tsx)": [
     "prettier --write",
-    "tsc --noEmit",
+    "bash -c tsc --noEmit",
     "eslint --fix \"src/**\"",
     "git add"
   ]

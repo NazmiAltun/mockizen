@@ -14,8 +14,7 @@ export function mapStaticFileRoute(
     }
     res.sendFile(filePath);
   };
-  if (!process.env.LOGGING_DISABLED) {
-    console.log(`Mapping static file. Method: ${method} route : ${route} path: ${path.join(__dirname, scenariosPath, route)}`);
-  }
+  console.log(`Mapping static file. Method: ${method} route : ${route} path: ${path.join(__dirname, scenariosPath, route)}`);
+
   return app[method](route, handler);
 }
