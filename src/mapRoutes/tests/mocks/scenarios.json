@@ -1,3 +1,21 @@
 {
-  "routes": {}
+  "routes": {
+    "/get-200": {
+      "get": 200
+    },
+    "/delete-202": {
+      "delete": 202
+    },
+    "/all": {
+      "delete": 202,
+      "get": 200,
+      "post": 200
+    },
+    "/sucess.html": {
+      "get": "200.html"
+    },
+    "/200.htm": {
+      "get": "200.htm"
+    }
+  }
 }
