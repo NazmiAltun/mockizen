@@ -8,7 +8,6 @@ type SandBox = NodeJS.Global & {
   module: Module;
 };
 
-/*eslint no-empty-function: ["error", { "allow": ["functions"] }]*/
 export default function (filePath: string): SandBox {
   const fileDirname = path.parse(filePath).dir;
   const sandbox = Object.assign(global, {
