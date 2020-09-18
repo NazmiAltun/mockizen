@@ -58,4 +58,4 @@ And run with docker
 docker run -p  9155:8080 -v  {DIR_CONTAINS_SCENARIONS_JSON_AND_OTHER_MOCK_FILES}:/opt/app/mocks nazmialtun/mockizen:latest
 ```
 
-Feel free to create to contribute
+Feel free to contribute
