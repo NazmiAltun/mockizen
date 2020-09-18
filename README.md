@@ -10,3 +10,52 @@
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=NazmiAltun/mockizen)](https://dependabot.com)
 
 Mockizen is a minimal mock http server that can run anywhere and exposes predefined endpoints. Built on top of node webframework [Express](https://expressjs.com/).
+Mockizen docker image is built on top of Node Alpine image and has 40 Mb compressed image size.
+
+## How To Use
+
+Mockizen reads routes from **scenarios.json** file. First create scenarios.json file. Here is a sample :
+
+```json
+{
+  "routes": {
+    "/live": {
+      "get": 200,
+    },
+    "/api/v1/user": {
+      "get": "user-get.js",
+      "post": "user-post.js",
+      "delete": 202
+    },
+    "/userlist": {
+      "get": "users.json",
+    },
+    "/some-image.png" :{
+      "get" : "path/route-to-image.png"
+    }
+  }
+}
+```
+
+There are three ways to mock an endpoint: 
+
+1. Declaring HTTP status code. (e.g  "get" : 200) : Will return status code with empty or dummy body.
+2. Static file/content (e.g "get" : "image.png" ) : Will return static file
+3. Javascript file (e.g "post":"user.js" ) :  Will execute javascript file. Javascript file should be in following format ;
+
+```js
+module.exports = function (req, res) {
+  // Read request
+  // ....
+  // Set response
+};
+
+```
+
+And run with docker
+
+```sh
+docker run -p  9155:8080 -v  {DIR_CONTAINS_SCENARIONS_JSON_AND_OTHER_MOCK_FILES}:/opt/app/mocks nazmialtun/mockizen:latest
+```
+
+Feel free to create to contribute
