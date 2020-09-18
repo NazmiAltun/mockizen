@@ -22,6 +22,9 @@
     },
     "/random": {
       "get": "random-gen.js"
+    },
+    "/user": {
+      "get": "user.js"
     }
   }
 }

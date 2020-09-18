@@ -1,6 +1,8 @@
 import express from 'express';
 import mapStatusCodeOnlyRoute from './mapStatusCodeOnlyRoute';
 import mapStaticFileRoute from './mapStaticFileRoute';
+import validateExtension from './validateExtension';
+import mapJsFileRoute from './mapJsFileRoute';
 
 export default function mapRoutes(app: express.Express, routes: Record<string, unknown>, currentRoute: string, dir: string): void {
   currentRoute = currentRoute || '';
@@ -17,7 +19,12 @@ export default function mapRoutes(app: express.Express, routes: Record<string, u
         break;
       case 'string':
         verb = key as 'all' | 'get' | 'post' | 'put' | 'delete' | 'patch' | 'options' | 'head';
-        mapStaticFileRoute(app, verb, dir, currentRoute, routes[key] as string);
+        const filePath = routes[key] as string;
+        if (validateExtension(filePath, '.js')) {
+          mapJsFileRoute(app, verb, dir, currentRoute, filePath);
+        } else {
+          mapStaticFileRoute(app, verb, dir, currentRoute, filePath);
+        }
         break;
       default:
         throw new Error(`Unknown value type ${typeof routes[key]}`);

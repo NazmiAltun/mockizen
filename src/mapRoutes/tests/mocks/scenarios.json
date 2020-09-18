@@ -19,6 +19,9 @@
     },
     "/sample": {
       "get": "sample.json"
+    },
+    "/delayed": {
+      "get": "delayed.js"
     }
   }
 }

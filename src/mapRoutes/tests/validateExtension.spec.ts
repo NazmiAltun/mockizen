@@ -12,4 +12,8 @@ describe('Check if Js File', () => {
       expect(validateExtension(fileExtensionPair.file, fileExtensionPair.expectedExtension)).to.be.true;
     });
   });
+
+  it('should return false when extension does not match', () => {
+    expect(validateExtension('users.json', '.js')).to.be.false;
+  });
 });
