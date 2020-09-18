@@ -10,7 +10,7 @@
     "test": "mocha -r ts-node/register src/**/*.spec.ts --exit",
     "coverage": "nyc yarn run test",
     "lint": "tsc --noEmit && eslint --fix \"**\"",
-    "build": "tsc"
+    "build": "tsc --project tsconfig.prod.json"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
