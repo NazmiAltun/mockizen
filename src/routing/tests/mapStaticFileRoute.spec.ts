@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 chai.should();
 
 describe('Map Status Code Only Route', () => {
-  const dir = path.resolve(process.cwd(), './src/mapRoutes/tests/mocks/');
+  const dir = path.resolve(process.cwd(), './src/routing/tests/mocks/');
 
   ['/wtf.jpg', '/200.htm', '/200.html', '/sample.json'].forEach(route => {
     mapStaticFileRoute(app, 'get', dir, route, route);

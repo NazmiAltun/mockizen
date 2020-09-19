@@ -1,12 +1,5 @@
 import path from 'path';
-
-type Module = {
-  exports: (req: any, res: any) => void;
-};
-
-type SandBox = NodeJS.Global & {
-  module: Module;
-};
+import SandBox from './sandBox';
 
 export default function (filePath: string): SandBox {
   const fileDirname = path.parse(filePath).dir;

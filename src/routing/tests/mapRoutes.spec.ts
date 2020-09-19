@@ -9,7 +9,7 @@ chai.should();
 
 describe('Map Routes', () => {
   before(async () => {
-    await mapRoutes(app, './src/mapRoutes/tests/mocks/scenarios.json');
+    await mapRoutes(app, './src/routing/tests/mocks/scenarios.json');
   });
   ['/all', '/200.htm', '/sucess.html', '/sample.json'].forEach(route => {
     it('should map get routes from scenarios.json file', done => {
