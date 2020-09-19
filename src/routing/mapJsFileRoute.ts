@@ -1,15 +1,6 @@
 import express from 'express';
 import path from 'path';
-import vm from 'vm';
-import fs from 'fs';
-import { createSandbox, SandBox } from '../sandbox';
-
-function runCodeInSandbox(filePath: string, fullFilePath: string): SandBox {
-  const sandbox = createSandbox(filePath);
-  const code = fs.readFileSync(fullFilePath, 'utf8');
-  vm.runInNewContext(code, sandbox);
-  return sandbox;
-}
+import { runCodeInSandbox } from '../sandbox';
 
 export default function (
   app: express.Express,

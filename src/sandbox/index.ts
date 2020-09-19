@@ -1,5 +1,3 @@
-import _createSandbox from './createSandbox';
-import _SandBox from './sandBox';
-import _handler from './handler';
+import _runCodeInSandbox from './runCodeInSandbox';
 
-export { _createSandbox as createSandbox, _SandBox as SandBox, _handler as Handler };
+export { _runCodeInSandbox as runCodeInSandbox };
