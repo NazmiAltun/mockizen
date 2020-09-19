@@ -11,11 +11,11 @@ export default function (
 ): express.Express {
   const fullFilePath = path.join(scenariosPath, filePath);
 
-  const handler = (req: any, res: any): void => {
+  const handler = async (req: any, res: any): Promise<void> => {
     if (!process.env.LOGGING_DISABLED) {
       console.log(`Requesting js file. Method: ${method} route : ${route} path: ${filePath}`);
     }
-    const sanbox = runCodeInSandbox(filePath, fullFilePath);
+    const sanbox = await runCodeInSandbox(filePath, fullFilePath);
     sanbox.module.exports.call(sanbox, req, res);
   };
 
