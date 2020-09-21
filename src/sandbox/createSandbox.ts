@@ -4,7 +4,12 @@ import SandBox from './sandBox';
 export default function (fullFilePath: string, filePath: string): SandBox {
   const newRequire = (modPath: string): any => {
     const newModPath = path.resolve(path.dirname(fullFilePath), modPath);
-    return require(newModPath);
+
+    try {
+      return require(newModPath);
+    } catch {
+      return require(modPath);
+    }
   };
 
   const sandbox = Object.assign(global, {
