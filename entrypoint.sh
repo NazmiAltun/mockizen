@@ -1,4 +1,5 @@
-!/bin/sh
+#!/bin/sh
+
 if test -f "mocks/package.json"; then
   cp mocks/package.json mocks/package-lock.json mocks/yarn.lock .
 

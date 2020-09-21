@@ -17,5 +17,4 @@ WORKDIR /opt/app
 COPY --from=prod-dep /opt/app/node_modules ./node_modules
 COPY --from=build  /opt/app/dist ./dist
 COPY --from=build /opt/app/entrypoint.sh .
-USER root
 CMD ./entrypoint.sh
