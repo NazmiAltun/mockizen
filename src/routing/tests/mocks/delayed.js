@@ -5,11 +5,12 @@ const DELAY_MS = 100;
 console.log('Before exports');
 
 module.exports = function (req, res) {
+  const getTime = require('./getTime');
   console.log(`Req: ${req}`);
   console.log(`Res: ${res}`);
-  const start = new Date().getTime();
+  const start = getTime();
   setTimeout(() => {
-    const end = new Date().getTime();
+    const end = getTime();
     res.json({ delayMs: end - start });
   }, DELAY_MS);
 };
