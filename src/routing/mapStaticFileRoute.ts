@@ -10,9 +10,6 @@ export default function (
 ): express.Express {
   const handler = (_: any, res: any): void => {
     const fullFilePath = path.join(scenariosPath, filePath);
-    if (!process.env.LOGGING_DISABLED) {
-      console.log(`Requesting static file. Method: ${method} route : ${route} path: ${filePath}`);
-    }
     res.sendFile(fullFilePath);
   };
 
