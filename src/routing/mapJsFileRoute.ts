@@ -19,10 +19,5 @@ export default function (
     sanbox.module.exports.call(sanbox, req, res);
   };
 
-  console.log(
-    `Mapping js file. Method: ${method} route : ${route} filePath:${filePath}` +
-      ` scenariosPath:${scenariosPath} fullFilePath: ${path.join(scenariosPath, filePath)}`
-  );
-
   return app[method](route, handler);
 }

@@ -65,4 +65,10 @@ And run with docker
 docker run -p  9155:8080 -v  {DIR_CONTAINS_SCENARIONS_JSON_AND_OTHER_MOCK_FILES}:/opt/app/mocks nazmialtun/mockizen:latest
 ```
 
-Feel free to contribute
+### How About Third Party NPM Packages ?
+
+Third party npm packages are supported. Make sure packages.json that contains npm packages used by mock js file is placed in the same directory with scenarios.json.
+
+## Contribution
+
+Feel free to contribute by creating a pull request
