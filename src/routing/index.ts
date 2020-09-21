@@ -1,3 +1,3 @@
-import mapRoutes from './parseAndmapRoutes';
+import parseAndmapRoutes from './parseAndmapRoutes';
 
-export default mapRoutes;
+export default parseAndmapRoutes;
