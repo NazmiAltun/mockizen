@@ -17,4 +17,5 @@ WORKDIR /opt/app
 COPY --from=prod-dep /opt/app/node_modules ./node_modules
 COPY --from=build  /opt/app/dist ./dist
 COPY --from=build /opt/app/entrypoint.sh .
+RUN sed -i 's/\r$//' ./entrypoint.sh
 CMD ./entrypoint.sh
