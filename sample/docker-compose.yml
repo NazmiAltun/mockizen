@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   mockserver:
+    image: mockizen-sample
     build:
       context: ..
     volumes:

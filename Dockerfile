@@ -14,7 +14,8 @@ RUN yarn build
 FROM node:current-alpine as runtime
 ENV NODE_ENV=production
 WORKDIR /opt/app
-COPY --from=prod-dep --chown=node:node /opt/app/node_modules ./node_modules
-COPY --from=build --chown=node:node /opt/app/dist ./dist
-USER node
-CMD ["node","--harmony","dist/index.js"]
+COPY --from=prod-dep /opt/app/node_modules ./node_modules
+COPY --from=build  /opt/app/dist ./dist
+COPY --from=build /opt/app/entrypoint.sh .
+USER root
+CMD ./entrypoint.sh
