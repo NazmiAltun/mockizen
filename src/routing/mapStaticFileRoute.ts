@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import path from 'path';
 
 export default function (
@@ -8,7 +8,7 @@ export default function (
   route: string,
   filePath: string
 ): express.Express {
-  const handler = (_: any, res: any): void => {
+  const handler = (_: Request, res: Response): void => {
     const fullFilePath = path.join(scenariosPath, filePath);
     res.sendFile(fullFilePath);
   };

@@ -2,7 +2,7 @@ import path from 'path';
 import SandBox from './sandBox';
 
 export default function (fullFilePath: string, filePath: string): SandBox {
-  const newRequire = (modPath: string): any => {
+  const newRequire = (modPath: string): string => {
     const newModPath = path.resolve(path.dirname(fullFilePath), modPath);
 
     try {

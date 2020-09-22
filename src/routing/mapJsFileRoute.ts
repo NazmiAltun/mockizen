@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import path from 'path';
 import { runCodeInSandbox } from '../sandbox';
 
@@ -11,7 +11,7 @@ export default function (
 ): express.Express {
   const fullFilePath = path.join(scenariosPath, filePath);
 
-  const handler = async (req: any, res: any): Promise<void> => {
+  const handler = async (req: Request, res: Response): Promise<void> => {
     const sanbox = await runCodeInSandbox(filePath, fullFilePath);
     sanbox.module.exports.call(sanbox, req, res);
   };

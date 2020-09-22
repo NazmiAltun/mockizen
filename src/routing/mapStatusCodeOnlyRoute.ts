@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 
 export default function (
   app: express.Express,
@@ -6,7 +6,7 @@ export default function (
   route: string,
   statusCode: number
 ): express.Express {
-  const handler = (_: any, res: any): void => {
+  const handler = (_: Request, res: Response): void => {
     res.sendStatus(statusCode);
   };
 
