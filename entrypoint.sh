@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if test -f "mocks/package.json"; then
-  cp mocks/package.json mocks/package-lock.json mocks/yarn.lock .
+  cp mocks/package.json mocks/package-lock.json mocks/yarn.lock . 2>/dev/null
 
   if test -f "yarn.lock"; then
     yarn install --modules-folder temp_node_modules
