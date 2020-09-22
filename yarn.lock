@@ -2993,6 +2993,10 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
+testokur-utils@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/testokur-utils/-/testokur-utils-1.3.0.tgz#72e3621841972a2d79f76cc5237bd501c49c72e9"
+
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
