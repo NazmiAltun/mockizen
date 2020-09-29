@@ -8,6 +8,7 @@ yarn.lock
 *.sh
 .eslintrc.js
 dist
+**/sample
 **/mocks
 Dockerfile
 *.yml

@@ -15,6 +15,14 @@ Mockizen docker image is built on top of Node Alpine image and has 40 Mb image s
 
 ## How To Use
 
+Check out the [Sample Mock OAuth Server](https://github.com/NazmiAltun/mockizen/tree/master/sample)
+
+Here's the docker command
+
+```sh
+docker run -p  9155:8080 -v  {DIR_CONTAINS_SCENARIONS_JSON_AND_OTHER_MOCK_FILES}:/opt/app/mocks nazmialtun/mockizen:latest
+```
+
 Mockizen reads routes from **scenarios.json** file. First create scenarios.json file. Here is a sample :
 
 ```json
@@ -58,12 +66,6 @@ module.exports = function (req, res) {
   // ....
   // Set response
 };
-```
-
-And run with docker
-
-```sh
-docker run -p  9155:8080 -v  {DIR_CONTAINS_SCENARIONS_JSON_AND_OTHER_MOCK_FILES}:/opt/app/mocks nazmialtun/mockizen:latest
 ```
 
 ### How About Third Party NPM Packages ?

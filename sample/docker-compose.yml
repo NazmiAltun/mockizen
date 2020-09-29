@@ -1,12 +1,9 @@
-version: "3.8"
+version: '3.4'
+
 services:
-  mockserver:
-    image: mockizen-sample
-    build:
-      context: ..
+  mock-server:
+    image: nazmialtun/mockizen:latest
     volumes:
-      - ./mocks:/opt/app/mocks
-    environment:
-      - PORT=8080
+      - ./oauth2:/opt/app/mocks
     ports:
-      - "7015:8080"
+      - "8081:8080"

@@ -1,0 +1,18 @@
+{
+  "routes": {   
+    "/health-check" :{
+      "get" : 200
+    },
+    "/hello.html" : {
+      "get" : "hello.html"
+    },
+    "/auth" :{
+      "/test-user" : {
+        "get": "create-test-user.js"
+      },
+      "/keys" : {
+        "get" : "public-keys.js"
+      }
+    }
+  }
+}
