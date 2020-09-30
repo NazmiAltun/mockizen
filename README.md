@@ -1,7 +1,6 @@
 # Mockizen
 
 ![CI](https://github.com/NazmiAltun/mockizen/workflows/CI/badge.svg)
-![Docker Automated build](https://img.shields.io/docker/automated/nazmialtun/mockizen?style=plastic)
 [![codecov](https://codecov.io/gh/NazmiAltun/mockizen/branch/master/graph/badge.svg)](https://codecov.io/gh/NazmiAltun/mockizen)
 [![BCH compliance](https://bettercodehub.com/edge/badge/NazmiAltun/mockizen?branch=master)](https://bettercodehub.com/)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=NazmiAltun_mockizen&metric=bugs)](https://sonarcloud.io/dashboard?id=NazmiAltun_mockizen)
