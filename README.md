@@ -15,7 +15,7 @@ Mockizen docker image is built on top of Node Alpine image and has 40 Mb image s
 
 ## How To Use
 
-Check out the [Sample Mock OAuth Server](https://github.com/NazmiAltun/mockizen/tree/master/sample)
+Check out [Sample Mock OAuth Server](https://github.com/NazmiAltun/mockizen/tree/master/sample)
 
 Here's the docker command
 
