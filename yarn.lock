@@ -227,9 +227,9 @@
   dependencies:
     chai-http "*"
 
-"@types/chai@4", "@types/chai@^4.2.13":
-  version "4.2.13"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.2.13.tgz#8a3801f6655179d1803d81e94a2e4aaf317abd16"
+"@types/chai@4", "@types/chai@^4.2.14":
+  version "4.2.14"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.2.14.tgz#44d2dd0b5de6185089375d976b4ec5caf6861193"
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
