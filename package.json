@@ -23,7 +23,7 @@
     "@types/morgan": "^1.9.2",
     "@types/node": "^15.6.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
-    "@typescript-eslint/parser": "^4.25.0",
+    "@typescript-eslint/parser": "^4.28.2",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "concurrently": "^6.2.0",
