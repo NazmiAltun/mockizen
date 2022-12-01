@@ -277,9 +277,9 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
-"@types/http-terminator@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@types/http-terminator/-/http-terminator-2.0.1.tgz#75fc363e32cb506ec191cc2bc2a9d04ed7204bf9"
+"@types/http-terminator@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/http-terminator/-/http-terminator-2.0.2.tgz#7a18c088bd067c5463977ea5d3f45d30876d2a55"
   dependencies:
     "@types/node" "*"
 
